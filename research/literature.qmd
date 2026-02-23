@@ -1,0 +1,63 @@
+---
+title: "Literature Review"
+bibliography: references.bib
+---
+
+## Introduction
+
+This section synthesizes key literature relevant to the thesis research.
+
+## Theoretical Framework
+
+### Key Concepts
+
+1. **Concept One**: Description and importance
+2. **Concept Two**: Theoretical foundations  
+3. **Concept Three**: Application to research
+
+## Major Themes
+
+### Theme 1: [Topic Area]
+
+Key papers and findings in this area...
+
+::: {.callout-note}
+## Important Study
+Author et al. (2023) found that... [Add citation when you have references.bib]
+:::
+
+### Theme 2: [Topic Area]
+
+Recent developments include...
+
+### Theme 3: [Topic Area]
+
+Critical perspectives on...
+
+## Research Gaps
+
+Current literature shows several gaps:
+
+1. Limited research on [specific area]
+2. Need for more [methodological approach]
+3. Insufficient attention to [topic]
+
+## How This Research Contributes
+
+This thesis addresses the identified gaps by:
+
+- Contribution 1
+- Contribution 2
+- Contribution 3
+
+## Key Papers
+
+| Authors | Year | Title | Key Finding |
+|---------|------|-------|-------------|
+| Smith et al. | 2023 | Example Paper | Finding 1 |
+| Jones & Brown | 2022 | Another Study | Finding 2 |
+| Davis | 2021 | Important Work | Finding 3 |
+
+## References
+
+References will appear here when you add citations to your `references.bib` file.

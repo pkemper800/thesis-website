@@ -1,0 +1,32 @@
+---
+title: "Thesis Research Portal"
+subtitle: "Exploring [Your Research Topic]"
+---
+
+## Welcome
+
+This website documents my thesis research on [your topic]. Here you'll find:
+
+- **Data Analysis**: Computational notebooks in Python, R, and GIS
+- **Visualizations**: Interactive maps and plots
+- **Writing**: Research findings and literature reviews
+- **Code**: Reproducible analysis scripts
+
+## Latest Updates
+
+::: {.callout-note}
+## Recent Work
+- Added new GIS analysis of [topic]
+- Updated Python clustering algorithm
+- Published literature review on [subject]
+:::
+
+## Quick Links
+
+- [Research Overview](research/index.qmd)
+- [About This Project](about.qmd)
+- [GitHub Repository](https://github.com/yourusername/thesis-website)
+
+---
+
+*Last updated: `{r} Sys.Date()`*

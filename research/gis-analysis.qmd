@@ -1,0 +1,166 @@
+---
+title: "GIS Analysis Example"
+author: "Your Name"
+date: today
+format:
+  html:
+    code-fold: show
+    code-tools: true
+jupyter: python3
+---
+
+## Introduction
+
+This notebook demonstrates GIS analysis and interactive mapping for the thesis.
+
+## Setup
+
+```{python}
+import geopandas as gpd
+import pandas as pd
+import matplotlib.pyplot as plt
+import folium
+from folium import plugins
+import numpy as np
+```
+
+## Load Spatial Data
+
+```{python}
+# Create sample point data
+np.random.seed(42)
+n_points = 50
+
+# Generate random coordinates (example: somewhere in Europe)
+lats = np.random.uniform(51.0, 52.0, n_points)
+lons = np.random.uniform(4.0, 6.0, n_points)
+values = np.random.randint(10, 100, n_points)
+
+# Create GeoDataFrame
+gdf = gpd.GeoDataFrame(
+    {'value': values, 'category': np.random.choice(['A', 'B', 'C'], n_points)},
+    geometry=gpd.points_from_xy(lons, lats),
+    crs='EPSG:4326'
+)
+
+print(gdf.head())
+print(f"\nTotal features: {len(gdf)}")
+```
+
+## Static Map
+
+```{python}
+#| label: fig-static-map
+#| fig-cap: "Distribution of sample points"
+
+fig, ax = plt.subplots(figsize=(12, 10))
+
+gdf.plot(
+    column='value',
+    cmap='YlOrRd',
+    legend=True,
+    markersize=100,
+    alpha=0.7,
+    edgecolor='black',
+    ax=ax
+)
+
+ax.set_xlabel('Longitude')
+ax.set_ylabel('Latitude')
+ax.set_title('Spatial Distribution of Values', fontsize=14, fontweight='bold')
+plt.tight_layout()
+plt.show()
+```
+
+## Interactive Map
+
+```{python}
+# Create base map centered on data
+center_lat = gdf.geometry.y.mean()
+center_lon = gdf.geometry.x.mean()
+
+m = folium.Map(
+    location=[center_lat, center_lon],
+    zoom_start=10,
+    tiles='OpenStreetMap'
+)
+
+# Add markers with popups
+for idx, row in gdf.iterrows():
+    folium.CircleMarker(
+        location=[row.geometry.y, row.geometry.x],
+        radius=row['value'] / 10,
+        popup=f"Value: {row['value']}<br>Category: {row['category']}",
+        color='red' if row['category'] == 'A' else 'blue' if row['category'] == 'B' else 'green',
+        fill=True,
+        fillOpacity=0.6
+    ).add_to(m)
+
+# Add layer control
+folium.LayerControl().add_to(m)
+
+# Display map
+m
+```
+
+## Spatial Statistics
+
+```{python}
+# Calculate spatial statistics by category
+spatial_stats = gdf.groupby('category').agg({
+    'value': ['mean', 'std', 'count'],
+    'geometry': lambda x: (x.x.mean(), x.y.mean())
+}).round(2)
+
+print("\nSpatial Statistics by Category:")
+print(spatial_stats)
+```
+
+## Buffer Analysis
+
+```{python}
+# Create buffers around points (in meters, need to reproject)
+gdf_proj = gdf.to_crs('EPSG:3857')  # Web Mercator
+gdf_proj['buffer'] = gdf_proj.geometry.buffer(1000)  # 1km buffer
+
+# Back to WGS84 for display
+gdf_buffers = gdf_proj.set_geometry('buffer').to_crs('EPSG:4326')
+
+print(f"Created {len(gdf_buffers)} buffer polygons")
+```
+
+## Heatmap
+
+```{python}
+# Create heatmap
+m_heat = folium.Map(
+    location=[center_lat, center_lon],
+    zoom_start=10,
+    tiles='OpenStreetMap'
+)
+
+# Prepare data for heatmap
+heat_data = [[row.geometry.y, row.geometry.x, row['value']] 
+             for idx, row in gdf.iterrows()]
+
+# Add heatmap layer
+plugins.HeatMap(heat_data, radius=15, blur=25, max_zoom=13).add_to(m_heat)
+
+m_heat
+```
+
+## Results
+
+::: {.callout-important}
+## Spatial Patterns
+- Points show clustering in the northern region
+- Category A values tend to be higher on average
+- Buffer analysis reveals potential overlap zones
+:::
+
+## Next Steps
+
+- Perform spatial autocorrelation analysis (Moran's I)
+- Investigate clustering patterns with DBSCAN
+- Conduct overlay analysis with additional layers
+- Create choropleth maps with aggregated data

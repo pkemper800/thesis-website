@@ -1,0 +1,47 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "My Thesis Research"
+  navbar:
+    background: primary
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: research/index.qmd
+        text: Research
+      - href: blog.qmd
+        text: Blog
+    right:
+      - icon: github
+        href: https://github.com/yourusername/thesis-website
+        aria-label: GitHub
+  sidebar:
+    - title: "Research"
+      style: "docked"
+      background: light
+      contents:
+        - research/index.qmd
+        - section: "Data Analysis"
+          contents:
+            - research/python-analysis.qmd
+            - research/r-analysis.qmd
+            - research/gis-analysis.qmd
+        - section: "Literature Review"
+          contents:
+            - research/literature.qmd
+
+format:
+  html:
+    theme: 
+      light: [cosmo, custom.scss]
+      dark: [darkly, custom.scss]
+    css: styles.css
+    toc: true
+    code-fold: true
+    code-tools: true
+    code-copy: true
+    link-external-newwindow: true

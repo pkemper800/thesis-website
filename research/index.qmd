@@ -1,0 +1,36 @@
+---
+title: "Research Overview"
+---
+
+## Current Work
+
+This section contains the core analytical work of my thesis.
+
+### Data Analysis
+
+- [Python Analysis](python-analysis.qmd) - Machine learning and statistical analysis
+- [R Analysis](r-analysis.qmd) - Statistical modeling and visualization
+- [GIS Analysis](gis-analysis.qmd) - Spatial data analysis and mapping
+
+### Literature Review
+
+- [Literature Review](literature.qmd) - Key papers and theoretical framework
+
+## Research Pipeline
+
+```{mermaid}
+flowchart LR
+    A[Data Collection] --> B[Data Cleaning]
+    B --> C[Exploratory Analysis]
+    C --> D[Modeling]
+    D --> E[Validation]
+    E --> F[Visualization]
+    F --> G[Interpretation]
+```
+
+## Key Findings
+
+::: {.callout-important}
+## Preliminary Results
+Results will be updated as analysis progresses.
+:::

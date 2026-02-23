@@ -1,0 +1,38 @@
+/* Additional custom styles */
+
+/* Hero section on homepage */
+.hero {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Image styling */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Figure captions */
+figcaption {
+  font-style: italic;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+}
+
+/* Code output */
+.cell-output {
+  margin-top: 1rem;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

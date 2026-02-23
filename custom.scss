@@ -1,0 +1,64 @@
+/*-- scss:defaults --*/
+
+// Custom colors
+$primary: #2c3e50;
+$secondary: #3498db;
+$success: #27ae60;
+$info: #16a085;
+$warning: #f39c12;
+$danger: #e74c3c;
+
+// Typography
+$font-family-sans-serif: "Inter", system-ui, -apple-system, sans-serif;
+$font-family-monospace: "Fira Code", "Courier New", monospace;
+
+$headings-font-weight: 600;
+
+/*-- scss:rules --*/
+
+// Custom styling
+.quarto-title-banner {
+  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+  color: white;
+}
+
+// Code blocks
+pre {
+  border-left: 3px solid $secondary;
+  border-radius: 4px;
+}
+
+// Callouts
+.callout {
+  border-left-width: 4px;
+  border-radius: 4px;
+}
+
+// Navigation
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+// Links
+a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Tables
+table {
+  margin: 1.5em 0;
+  
+  thead {
+    background-color: lighten($primary, 45%);
+    font-weight: 600;
+  }
+  
+  tr:hover {
+    background-color: lighten($secondary, 50%);
+  }
+}

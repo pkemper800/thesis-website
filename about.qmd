@@ -1,0 +1,39 @@
+---
+title: "About"
+---
+
+## About This Research
+
+This website contains the research, analysis, and writing for my thesis on [your topic]. 
+
+### Research Questions
+
+1. Question one?
+2. Question two?
+3. Question three?
+
+### Methodology
+
+This research employs:
+
+- **Statistical Analysis**: Using R for statistical modeling
+- **Machine Learning**: Python for predictive analytics
+- **Spatial Analysis**: GIS tools for geographic data
+- **Data Visualization**: Interactive and static visualizations
+
+### Timeline
+
+- **Phase 1**: Literature review and data collection
+- **Phase 2**: Exploratory data analysis
+- **Phase 3**: Model development
+- **Phase 4**: Writing and publication
+
+## About Me
+
+[Your bio here]
+
+### Contact
+
+- Email: your.email@university.edu
+- GitHub: [yourusername](https://github.com/yourusername)
+- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
