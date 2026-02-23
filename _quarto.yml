@@ -17,7 +17,7 @@ website:
         text: Blog
     right:
       - icon: github
-        href: https://github.com/yourusername/thesis-website
+        href: https://github.com/pkemper800/thesis-website
         aria-label: GitHub
   sidebar:
     - title: "Research"
