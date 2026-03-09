@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with My Thesis"
-author: "Your Name"
-date: "2024-01-15"
+author: "Paige Kemper"
+date: "2026-02-15"
 categories: [research, updates]
 image: "image.jpg"
 ---

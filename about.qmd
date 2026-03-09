@@ -4,36 +4,50 @@ title: "About"
 
 ## About This Research
 
-This website contains the research, analysis, and writing for my thesis on [your topic]. 
+This website contains the research, analysis, and writing for my thesis on energy cooperatives in the Netherlands. 
 
 ### Research Questions
 
-1. Question one?
-2. Question two?
-3. Question three?
+1. What demographic characteristics (political affiliation, income level, education level, age, presence of kids) correlate with the formation of ECs in the Netherlands? 
+1a.	Sub Question: Does homogeneity in socioeconomic demographic characteristics, political voting patterns, or in type of household correlate with increased collaboration? 
+2. What geographic characteristics drive the emergence – and success in renewable energy adoption – of energy communities in the Netherlands? 
+2a. To what extent do ECs in the Netherlands exhibit clustering behavior? 
+2b. To what extent are there urban morphology characteristics that might explain/correlate with EC formation?
+3. **What geographic, policy, urban, and demographic characteristics may explain ECs success in solar adoption, and which ECs are most successful?**
+3a. Policy: What policy structures (SDE++, RES) might explain differences in EC RE (solar PV, in particular) adoption across the Netherlands?
+3b. Urban: What urban morphology (planning/organization) characteristics of the EC correlates with success in RE adoption?
+4. 4.	How does the distribution of RE adoption vary across ECs in the Netherlands: Which ECs are most successful (have the biggest and/or multiple solar installations), and what geographic, urban, and policy characteristics differentiate successful ECs in the Netherlands? 
+
 
 ### Methodology
 
 This research employs:
 
-- **Statistical Analysis**: Using R for statistical modeling
-- **Machine Learning**: Python for predictive analytics
+- **Statistical Analysis**: Using R for statistical modeling, and particularly for Social Network Analysis and regression analysis
 - **Spatial Analysis**: GIS tools for geographic data
 - **Data Visualization**: Interactive and static visualizations
 
 ### Timeline
 
-- **Phase 1**: Literature review and data collection
+- **Phase 1**: Introduction, Literature review and data collection
 - **Phase 2**: Exploratory data analysis
 - **Phase 3**: Model development
 - **Phase 4**: Writing and publication
 
 ## About Me
 
-[Your bio here]
+Dear reader, 
+Hey! I’m Paige. 
+I’m from Asheville, North Carolina. I now live in Nijmegen, the Netherlands. I moved to the Netherlands in pursuit of a master’s degree and career in support of renewable energy transitions. 
+For some background, I’m doing the Research Master in Social and Cultural science (Comparative Politics Track) program at Radboud University, with a focus on renewable energy. I’d like to make it easier for communities to access affordable, secure, renewable energy – therefore, my thesis is focused on community-adoption of renewable energy. 
+I feel very excited and motivated for this research: it bridges a variety of topics (for the academics reading this, it is an interdisciplinary study of political science, sociology, urban and spatial planning, and innovation adoption). Further, I find it particularly relevant today, amid the convergence of sustainable transitions, adoption of AI tools, and shifting spheres of power. I believe that communities are a bedrock of society, and so from this, I hope to empower as many individuals and communities as possible in pursuit and attainment of energy solutions that are best for them. 
+This blog is intended to document the evolution and progress of my thesis. More than that, though, I will discuss perspectives, solutions, questions, and ideas that I encounter in my research. I hope that this makes it easier for you to learn about a key resource, energy, that has been gate-kept and controlled by big industry and special interests for too long. 
+With this, I’d like to invite your thoughts and questions, so that I can continue keep my work as relevant and helpful as possible. 
+With warmth and thanks for your time and attention, 
+PK
 
 ### Contact
 
-- Email: your.email@university.edu
-- GitHub: [yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
+- Email: paige.kemper@ru.nl 
+- GitHub: [pkemper800](https://github.com/pkemper800)
+- LinkedIn: [Paige Kemper](https://www.linkedin.com/in/paige-kemper-7103931b9/)
