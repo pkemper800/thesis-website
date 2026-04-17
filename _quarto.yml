@@ -4,6 +4,8 @@ project:
 
 website:
   title: "My Thesis Research"
+  site-url: https://pkemper800.github.io/thesis-website/
+  repo-url: https://github.com/pkemper800/thesis-website
   navbar:
     background: primary
     left:

@@ -119,30 +119,26 @@ project:
 
 This tells Quarto to build the site into the `docs/` folder.
 
-### Step 2: Build the Site
+### Step 2: Commit and Push
+
+The repository includes a GitHub Actions workflow that renders the site and
+deploys `docs/` automatically.
 
 ```bash
-quarto render
+git add .
+git commit -m "Update thesis website"
+git push origin main
 ```
 
-### Step 3: Commit and Push
+### Step 3: Enable GitHub Pages (one-time)
 
-```bash
-git add docs/
-git commit -m "Build site for GitHub Pages"
-git push
-```
-
-### Step 4: Enable GitHub Pages
-
-1. Go to your repository on GitHub
+1. Go to your repository on GitHub (`thesis-website`)
 2. Click "Settings" → "Pages"
-3. Under "Source", select:
-   - **Branch**: `main`
-   - **Folder**: `/docs`
-4. Click "Save"
+3. Under "Build and deployment", set:
+   - **Source**: `GitHub Actions`
+4. Save
 
-Your site will be live at: `https://yourusername.github.io/thesis-website/`
+Your site will be live at: `https://pkemper800.github.io/thesis-website/`
 
 ## 🎨 Customization
 

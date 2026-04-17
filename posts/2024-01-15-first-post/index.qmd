@@ -12,6 +12,7 @@ Today marks the start of documenting my thesis research journey. This blog will 
 
 ## Research Goals
 
+uv
 My primary objectives are:
 
 1. Collect and analyze data from multiple sources

@@ -1,4 +1,9 @@
-# UV & VS Code Integration Guide
+---
+title: "UV & VS Code Integration Guide"
+format: html
+execute:
+  eval: false
+---
 
 This guide covers how to use UV (Astral's Python package manager) with VS Code for your thesis website.
 
