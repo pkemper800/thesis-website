@@ -11,6 +11,10 @@ permissions:
   pages: write
   id-token: write
 
+# Use Node.js 24 for JS-based actions (see GitHub Actions Node 20 deprecation)
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -20,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -50,7 +54,7 @@ jobs:
 
       - name: Install R packages (for r-analysis.qmd)
         run: |
-          Rscript -e "install.packages(c('tidyverse','broom','knitr'), repos='https://cloud.r-project.org', Ncpus=2)"
+          Rscript -e "lib <- Sys.getenv('R_LIBS_USER'); stopifnot(nzchar(lib)); dir.create(lib, recursive=TRUE, showWarnings=FALSE); .libPaths(c(lib, .libPaths())); install.packages(c('tidyverse','broom','knitr'), lib=lib, repos='https://cloud.r-project.org', Ncpus=2, dependencies=TRUE)"
 
       - name: Render Quarto site
         env:
