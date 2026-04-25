@@ -54,7 +54,7 @@ jobs:
 
       - name: Install R packages (for r-analysis.qmd)
         run: |
-          Rscript -e "lib <- Sys.getenv('R_LIBS_USER'); stopifnot(nzchar(lib)); dir.create(lib, recursive=TRUE, showWarnings=FALSE); .libPaths(c(lib, .libPaths())); install.packages(c('tidyverse','broom','knitr','rmarkdown'), lib=lib, repos='https://cloud.r-project.org', Ncpus=2, dependencies=TRUE)"
+          Rscript -e "lib <- Sys.getenv('R_LIBS_USER'); stopifnot(nzchar(lib)); dir.create(lib, recursive=TRUE, showWarnings=FALSE); .libPaths(c(lib, .libPaths())); options(repos = c(CRAN='https://cloud.r-project.org')); pkgs <- c('tidyverse','broom','knitr','rmarkdown'); install.packages(pkgs, lib=lib, Ncpus=2, dependencies=TRUE); missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly=TRUE)]; if (length(missing)) stop(sprintf('Missing R packages after installation: %s', paste(missing, collapse=', ')))"
 
       - name: Render Quarto site
         env:
