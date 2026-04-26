@@ -35,11 +35,12 @@ jobs:
       - name: Set up Python
         run: uv python install 3.12
 
-      - name: Install system libraries (GIS / GDAL stack)
+      - name: Install system libraries (GIS / GDAL + font stack)
         run: |
           sudo apt-get update -y
           sudo apt-get install -y --no-install-recommends \
-            gdal-bin libgdal-dev libgeos-dev libproj-dev libspatialindex-dev
+            gdal-bin libgdal-dev libgeos-dev libproj-dev libspatialindex-dev \
+            libfreetype6-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev pkg-config
 
       - name: Create venv and install Python dependencies
         run: |
@@ -52,9 +53,14 @@ jobs:
           r-version: "release"
           use-public-rspm: true
 
-      - name: Install R packages (for r-analysis.qmd)
-        run: |
-          Rscript -e "lib <- Sys.getenv('R_LIBS_USER'); stopifnot(nzchar(lib)); dir.create(lib, recursive=TRUE, showWarnings=FALSE); .libPaths(c(lib, .libPaths())); options(repos = c(CRAN='https://cloud.r-project.org')); pkgs <- c('tidyverse','broom','knitr','rmarkdown'); install.packages(pkgs, lib=lib, Ncpus=2, dependencies=TRUE); missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly=TRUE)]; if (length(missing)) stop(sprintf('Missing R packages after installation: %s', paste(missing, collapse=', ')))"
+      - name: Install R dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::tidyverse
+            any::broom
+            any::knitr
+            any::rmarkdown
 
       - name: Render Quarto site
         env:
